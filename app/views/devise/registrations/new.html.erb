@@ -1,0 +1,94 @@
+</br>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-md-offset-3">
+        <div class="card">
+          <div class="card-header bg-dark" style="color:White">
+            <h2>Sign up</h2>
+          </div>
+        <div class="card-body">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="field form-group">
+              <%= f.label :avatar %><br />
+              <%= f.file_field :avatar, class: "form-control mb-2"%>
+
+            </div>
+            <div class="row">
+             <div class="col">
+                <div class="field form-group">
+                  <%= f.label :first_name %><br />
+                  <%= f.text_field :first_name, class: "form-control mb-2", placeholder: "First Name", autofocus: true , required: true%>
+                </div>
+              </div>
+              <div class="col">
+                <div class="field form-group">
+                  <%= f.label :last_name %><br />
+                  <%= f.text_field :last_name, class: "form-control mb-2", placeholder: "Last Name", autofocus: true , required: true%>
+                </div>
+              </div>
+            </div>
+            <div class="field form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, class: "form-control mb-2",placeholder: "Email", autofocus: true, autocomplete: "email" %>
+            </div>
+        <div class="row">
+          <div class="col">
+            <div class="field form-group">
+              <%= f.label :address %><br />
+              <%= f.text_field :address, class: "form-control mb-2",placeholder: "Address", autofocus: true, autocomplete: "address", required: true %>
+            </div>
+          </div>
+          <div class="col">
+            <div class="field form-group">
+              <%= f.label :city %><br />
+              <%= f.select(:city, options_for_select([['Lahore'], ['Karachi'], ['Islamabad'], ['Faislabad'], ['Multan'], ['Kashmir'], ['Other']]), {}, {class: "form-control mb-2"}) %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="field form-group">
+              <%= f.label :phone_no %><br />
+              <%= f.number_field :phone_no, class: "form-control mb-2",placeholder: "Phone No.", autofocus: true, autocomplete: "Phone Number", required: true %>
+            </div>
+          </div>
+          <div class="col">
+            <div class="field form-group">
+              <%= f.label :cnic_no %><br />
+              <%= f.number_field :cnic_no, class: "form-control mb-2",placeholder: "CNIC No.", autofocus: true, autocomplete: "CNIC No", required: true %>
+            </div>
+          </div>
+        </div>
+            <div class="field form-group">
+              <%= f.label :cnic_image %><br />
+              <%= f.file_field :avatar, class: "form-control mb-2"%>
+            </div>
+            <div class="field form-group">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, class: "form-control mb-2",placeholder: "Password", autocomplete: "new-password" %>
+            </div>
+            <div class="field form-group">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, class: "form-control mb-2",placeholder: "Confirm Password", autocomplete: "new-password" %>
+            </div>
+            </br>
+            <div class="actions">
+              <%= f.submit "Sign up" ,class: "btn btn-secondary"%>
+              <%- if controller_name != 'sessions' %>
+                  <%= link_to "Log in", new_session_path(resource_name),class:"btn btn-secondary" %><br />
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+

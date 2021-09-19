@@ -1,0 +1,18 @@
+
+<div class="d-flex flex-column align-items-center">
+
+<% obj.each do |ad| %>
+
+  <div class="col-md-8 my-2">
+    <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <h2><%= link_to "#{ad.title}", ad_path(ad) %></h2>
+        <p><%= ad.description.truncate(75) if ad.description.present? %></p>
+        <div class="d-flex justify-content-between">
+
+          <small>Created by: <%=ad.user.first_name %></small><small>Created at: <%=  time_ago_in_words(ad.created_at) %></small>
+        </div>
+    </div>
+  </div>
+
+<% end %>
+</div>
