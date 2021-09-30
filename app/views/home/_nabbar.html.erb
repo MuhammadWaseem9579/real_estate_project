@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">RealState</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-top: -4px; margin-bottom: -4px;">
+  <a class="navbar-brand" href="#"><%= link_to 'RealState',root_path,class:'navbar-brand',style: "color:White"%></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,13 +10,13 @@
         <%= link_to 'Home',root_path,class:'nav-link'%>
       </li>
       <li class="nav-item active">
-        <%= link_to 'House',root_path,class:'nav-link'%>
+        <%= link_to 'House', get_house_ads_path ,class:'nav-link'%>
       </li>
       <li class="nav-item active">
-        <%= link_to 'Comercial',root_path,class:'nav-link'%>
+        <%= link_to 'Comercial', get_commercial_ads_path ,class:'nav-link'%>
       </li>
       <li class="nav-item active">
-        <%= link_to 'Rent',root_path,class:'nav-link'%>
+        <%= link_to 'Rent', get_rent_ads_path ,class:'nav-link'%>
       </li>
       <% if user_signed_in? %>
       <li class="nav-item active">
@@ -35,10 +35,9 @@
           <span class="name ml-2" style="color:White"><%= current_user.first_name%></span>
        </a>
        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-            <%= link_to "Edit Profile",edit_user_registration_path,class:"dropdown-item"%>
-            <%= link_to "Sign Out",destroy_user_session_path, method: :delete,class:"dropdown-item"%>
-
+            <a class="dropdown-item" href="#"><%= link_to "Edit Profile",edit_user_registration_path,class:"dropdown-item"%></a>
+            <a class="dropdown-item" href="#"><%= link_to "User Ads",ads_path,class:"dropdown-item"%></a>
+            <a class="dropdown-item" href="#"><%= link_to "Sign Out",destroy_user_session_path, method: :delete,class:"dropdown-item"%></a>
 
           <% else %>
             <%= link_to "Sign Up",new_user_registration_path,class:"btn btn-secondary"%>

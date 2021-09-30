@@ -1,18 +1,29 @@
 
-<div class="d-flex flex-column align-items-center">
+<h1 class="text-center pt-5"></h1>
 
+<div class="container">
 <% obj.each do |ad| %>
-
-  <div class="col-md-8 my-2">
-    <div class="h-100 p-5 text-white bg-dark rounded-3">
-        <h2><%= link_to "#{ad.title}", ad_path(ad) %></h2>
-        <p><%= ad.description.truncate(75) if ad.description.present? %></p>
-        <div class="d-flex justify-content-between">
-
-          <small>Created by: <%=ad.user.first_name %></small><small>Created at: <%=  time_ago_in_words(ad.created_at) %></small>
+  <div class="d-flex flex-column align-items-center mt-5">
+    <div class="card mb-3">
+    <div class="row">
+      <div class="col-lg-6 col-lg-6 col-12">
+        <image src="<%= (url_for(ad.avatar.variant(resize: "450x400!"))) %>" class="pic1">
+      </div>
+      <div class="col-lg-6 col-lg-6 col-12 mt-2 pl-4">
+        <div class="card-body">
+          <h3 class="card-title"><%=ad.title%></h3>
+          <h4 class="card-price">PKR : <%=ad.price%></h4>
+          <p>Address : <%=ad.address%></p>
+          <p>Area : <%=ad.area%></p>
+          <h5 class="text-info card-title">Get In Touch To Buy A New House In <%=ad.city%></h5>
+          <%= link_to "Details", ad_path(ad),class:"btn btn-success pl-4 pr-4",style:"border: 2px solid #555;" %>
+          <hr>
         </div>
+      </div>
     </div>
   </div>
-
+  </div>
 <% end %>
 </div>
+</div>
+

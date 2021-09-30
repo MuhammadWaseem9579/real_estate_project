@@ -36,30 +36,28 @@ class AdsController < ApplicationController
 
   def show
     @ad = Ad.find(params[:id])
+    @related_ads = Ad.where.not(id: @ad.id).where(purpose: @ad.purpose, property_type: @ad.property_type, city: @ad.city)
   end
 
   def destroy
   end
 
   def ads_filter
-    if params[:filter].present?
-      if params[:filter] == "rent"
-        @ads = Ad.where("want_to ILIKE ?", "%#{param[:filter]}%")
-      else
-        @ads = Ad.where("property_type ILIKE ?", "%#{params[:filter]}%")
+    if params[:property_type].present? || params[:want_to].present?
+      if params[:property_type]
+        @ads = Ad.where(property_type: params[:property_type])
       end
+      if params[:purpose]
+        @ads = @ads.where(purpose: params[:want_to])
+      end
+      render json: {success: true, message: "ye low", ads: @ads}
     else
-      @ads = nil
-      flash[:notice] = "No filter passed"
-    end
-    respond_to do |format|
-      format.html  { render :html => @ads }
-      format.json  { render :json => @ads }
+      render json: {success: false, message: "No Data Found"}
     end
   end
 
   private
     def permit_params
-      params.require(:ad).permit(:title,:area,:address,:property_type,:price,:city,:description,:phone_no,:pic1)
+      params.require(:ad).permit(:title,:area,:address,:property_type,:price,:city,:description,:phone_no,:pic1,:avatar,:pic2,:avatar1,:pic3,:pic4,:avatar2,:avatar3,:purpose,:electricity,:electricity_backup,:parking_space,:security_staff,:mosque,:bed,:bath,:community_gym,:nearby_hospital,:nearby_school)
     end
 end

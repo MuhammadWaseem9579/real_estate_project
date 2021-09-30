@@ -1,0 +1,137 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+</head>
+<div class="body-4">
+<div class="container">
+<div class="slider owl-carousel">
+      <div class="card-2">
+        <div class="img-2">
+          <img src="profile-1.jpeg" alt="">
+        </div>
+        <div class="content-2">
+          <div class="title-2">Briana Tozour</div>
+          <div class="sub-title">Graphic Designer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
+          <div class="btn-2">
+            <button>Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-2">
+        <div class="img-2">
+          <img src="profile-2.jpeg" alt="">
+        </div>
+        <div class="content-2">
+          <div class="title-2">Pricilla Preez</div>
+          <div class="sub-title">Web Developer</div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
+          <div class="btn-2">
+            <button>Read more</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-2">
+        <div class="img-2">
+          <img src="profile-3.jpeg" alt="">
+        </div>
+        <div class="content-2">
+              <div class="title-2">Eliana Maia
+              </div>
+              <div class="sub-title">App Developer
+              </div>
+              <p class=para-2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
+              <div class="btn-2">
+                <button>Read more</button>
+              </div>
+        </div>
+      </div>
+      <div class="card-2">
+        <div class="img-2">
+          <img src="profile-3.jpeg" alt="">
+        </div>
+        <div class="content-2">
+              <div class="title-2">Muddasir
+              </div>
+              <div class="sub-title">App Developer
+              </div>
+              <p class=para-2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
+              <div class="btn-2">
+                <button>Read more</button>
+              </div>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
+<style>
+.body-4{
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #f2f2f2;
+}
+.slider{
+  max-width: 1100px;
+  display: flex;
+}
+.slider .card-2{
+  flex: 1;
+  margin: 0 10px;
+  background: #fff;
+}
+.slider .card-2 .img-2{
+  height: 200px;
+  width: 100%;
+}
+.slider .card-2 .img-2 img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.slider .card-2 .content-2{
+  padding: 10px 20px;
+}
+.card-2 .content-2 .title-2{
+  font-size: 25px;
+  font-weight: 600;
+}
+.card-2 .content-2 .sub-title{
+  font-size: 20px;
+  font-weight: 600;
+  color: #e74c3c;
+  line-height: 20px;
+}
+.card-2 .content-2 p{
+  text-align: justify;
+  margin: 10px 0;
+}
+.card-2 .content-2 .btn-2{
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+}
+.card-2 .content-2 .btn-2 button{
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.card-2 .content-2 .btn-2 button:hover{
+  transform: scale(0.9);
+}
+</style>
+    <script>
+      $(".slider").owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 2000, //2000ms = 2s;
+        autoplayHoverPause: true,
+      });
+    </script>

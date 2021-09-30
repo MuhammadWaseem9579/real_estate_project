@@ -1,0 +1,33 @@
+<section>
+<body>
+    <main>
+        <header>
+            <h1><%= title %></h1>
+            <p>
+                <span onclick="right_mover()">&#139;</span>
+                <span onclick="left_mover()">&#155;</span>
+            </p>
+        </header>
+        <section id="sec1">
+            <%= ads.each do |ad| %>
+                <div class="product">
+                    <picture>
+                        <%= image_tag(ad.avatar,width:"100%")%>
+                    </picture>
+                    <div class="details">
+                        <p>
+                            <b><%= ad.title %></b></br>
+                            <small class="hey">New Arrival</small>
+                        </p>
+                        <samp><%= ad.price %></samp>
+                    </div>
+                    <div class="button9">
+                        <%= link_to "Show", ad_path(ad), class: "btn btn-primary" %>
+                    </div>
+                </div>
+            <% end %>
+        </section>
+    </main>
+</body>
+
+</section>
