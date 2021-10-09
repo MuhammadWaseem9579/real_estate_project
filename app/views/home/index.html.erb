@@ -1,4 +1,4 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide mar" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -22,7 +22,7 @@
           <%# <img class="d-block w-100" src="..." alt="Second slide"> %>
         </div>
         <div class="carousel-item">
-          <%= image_tag("p4.jpg",height: '800', class: "d-block w-100")%>
+          <%= image_tag("p1.jpg",height: '800', class: "d-block w-100")%>
           <div class="carousel-caption d-none d-md-block">
                <h1 class="mb-3">Want To Sell</h1>
                <p>Select Houses According To Your Choice</p>
@@ -40,12 +40,38 @@
       </a>
     </div>
 </div>
-<h4 class="head2" style="color:White; text-align: center;">Find New Projects In Pakistan</h4>
+<script>
+
+
+
+</script>
+<style>
+/* @media(max-width: 768px){
+  .slideee{
+   width:100%;
+} */
+@media(max-width: 400px){
+  .mar{
+   width:375px;
+}
+}
+@media(max-width: 368px){
+  .mar{
+   width:360px;
+}
+}
+@media(max-width: 320px){
+  .mar{
+   width:320px;
+}
+}
+</style>
+<section>
 <div class="search-content"style="background-color: rgba(34, 34, 34, 0.85);padding: 15px; border-radius:10px;">
     <div class="form-row ">
         <div class="form-group col-lg-6">
             <label for="city">City</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="select-city">
                 <option>Lahore</option>
                 <option>Karachi</option>
                 <option>Islamabad</option>
@@ -57,7 +83,7 @@
         </div>
         <div class="form-group col-lg-6">
             <label for="city">Property Type</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="select-property-type">
                     <option>Plot</option>
                     <option>House</option>
                     <option>Commercial</option>
@@ -67,17 +93,18 @@
     </div>
     <div class="form-row ">
         <div class="form-group col-lg-10">
-            <select class="form-control" id="exampleFormControlSelect2">
-                <option>Buy</option>
+            <select class="form-control" id="select-purpose">
+                <option>Sale</option>
                 <option>Rent</option>
             </select>
         </div>
         <div class="form-group col-md-2">
 
-            <button type="button" class="btn btn-success ">Search</button>
+            <button type="button" class="btn btn-success " id="select-search" >Search</button>
         </div>
     </div>
 </div>
+</section>
 <section id="aboutt">
 <h1 class="text-center text-capitalize pt-5">about us</h1>
 <p class="text-center text-capitalize pt-3">We have the best projects in pakistan.
@@ -99,7 +126,7 @@
                 <%= image_tag("p7.jpg",style: "max-width:100%; height:100%; border-radius:4px;")%>
             </div>
             <div class="content1">
-                <p>Real State has since revolutionised the real estate industry of Pakistan by connecting buyers and sellers online in a highly convenient way.
+                <p>Real State has since revolutionised the real estate industry of Pakistan by connecting buyers and sellers online in a highly convenient.
                 </p>
 
             </div>
@@ -118,137 +145,57 @@
 </div>
 </section>
 <section>
-    <%= render 'shared/ads_listing', obj:@ads , title: "Ads For You"%>
+    <h1 class="text-center text-capitalize mt-5">Ads For You</h1>
+    <hr class="w-25 mx-auto mt-5">
+    <div id="filter-list"><%= render 'shared/ads_listing', obj:@ads , title: "Ads For You"%></div>
     </br>
-    <%= will_paginate @ads, class:"hello3" %>
+    <div id="pagination-block">
+        <%= will_paginate @ads, class:"hello3" %>
+    <div>
     <hr>
-</section>
 
-
-<section id="tes">
-<h1 class="text-center text-capitalize pt-5">Our Testimonials</h1>
-<hr class="w-25 mx-auto pt-5">
-<div class="body3">
-    <div class="container" id ="testi">
-        <div class="wrapper">
-            <div class="card-1">
-                <div class="card-thumb">
-                    <%= image_tag("p2.jpg",style: "width:100%; height:100%; border-radius:4px; object-fit: cover;")%>
-                    <span class="client-name">Author</span>
-                </div>
-                <div class="card-bodyy">
-                    <p class="review">Learning things is my passion and Im very passionate about being able to help the people in need; my IT degree will help me to do this.And this website helps lot of people."</p>
-                    <h2>Muhammad Waseem</h2>
-                    <h4>Follow us</h4>
-  	 			    <div class="social-links">
-  	 				<a href="#"><i class="fab fa-twitter"></i></a>
-  	 				<a href="#"><i class="fab fa-instagram"></i></a>
-  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
-  	 			    </div>
-                </div>
-            </div>
-            <div class="card-1">
-                <div class="card-thumb">
-                    <%= image_tag("p12.jpg",style: "width:100%; height:100%; border-radius:4px; object-fit: cover;")%>
-                    <span class="client-name">Developer</span>
-                </div>
-                <div class="card-bodyy">
-                    <p class="review">"Learning code is my obsession".In August 2016,I took the little I have saved and bought a computer,and installed ubuntu and start working on my passion and taught myself.</p>
-                    <h2>Muddasir Zafar</h2>
-                     <h4>Follow us</h4>
-  	 			    <div class="social-links">
-  	 				<a href="#"><i class="fab fa-twitter"></i></a>
-  	 				<a href="#"><i class="fab fa-instagram"></i></a>
-  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
-  	 			    </div>
-                </div>
-            </div>
-            <div class="card-1">
-                <div class="card-thumb">
-                    <%= image_tag("p14.jpg",style: "width:100%; height:100%; border-radius:4px; object-fit: cover;")%>
-                    <span class="client-name">Designer</span>
-                </div>
-                <div class="card-bodyy">
-                    <p class="review">Many companies struggle to grab people's attention using their testimonial pages, but RealState does a great job of catching your eye as soon as you arrive on the page.</p>
-                    <h2>Muhammad Haris</h2>
-                    <h4>Follow us</h4>
-  	 			    <div class="social-links">
-  	 				<a href="#"><i class="fab fa-twitter"></i></a>
-  	 				<a href="#"><i class="fab fa-instagram"></i></a>
-  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
-  	 			    </div>
-                </div>
-            </div>
-        </div>
-        </br>
-        <div class="indicatorss">
-            <button class="activee"></button>
-            <button></button>
-            <button></button>
-        </div>
-    </div>
-</div>
-</br>
-</br>
 </section>
-<style>
-.card-bodyy .social-links a{
-	display: inline-block;
-	height: 28px;
-	width: 28px;
-	background-color: black;
-	margin:0 5px 5px 0;
-	text-align: center;
-	line-height: 28px;
-	border-radius: 50%;
-	color: White;
-	transition: all 0.5s ease;
-}
-.card-bodyy .social-links a:hover{
-	color: #24262b;
-	background-color: #ffffff;
-}
-</style>
+<section>
+    <%= render 'shared/my_slider', ads: @featured_ads , title: "Featured Ads" %>
+</section>
+<section>
+    <%= render 'shared/testi'%>
+</section>
 <script>
-const wrapper = document.querySelector('.wrapper');
-const indicatorss = [...document.querySelectorAll('.indicatorss button')];
-
- let currentTestimonial = 0; // Default 0
-
-    indicatorss.forEach((item, i) => {
-    item.addEventListener('click', () => {
-    indicatorss[currentTestimonial].classList.remove('activee');
-    wrapper.style.marginLeft = `-${100 * i}%`;
-    item.classList.add('activee');
-    currentTestimonial = i;
-})
-})
-</script>
- <script>
         setTimeout(() => {
             $('document').ready(function() {
-                $('#go_for').on('click', function(){
+                $('#select-search').on('click', function(){
                     var url = "/ads_filter"
                     $.ajax({
                         type: "GET",
                         url: url,
                         dataType: 'json',
                         data: {
-                            "status" : $("#bugselect").val()
+                            "city" : $("#select-city").val(),
+                            "purpose" : $("#select-purpose").val(),
+                            "property_type" : $("#select-property-type").val()
                         },
                         success: function(data) {
-                                var html_code = "";
-                                for (let i = 0; i < data.ads.length; i++) {
-                                    html_code += "<h1>" + data.ads[i].id + "</h1>";
+                                var html_code = '<div id="search_results">';
+                                if(data.ads.length > 0) {
+                                    for (let i = 0; i < data.ads.length; i++) {
+                                        html_code += '<h1 id="search_results">' + data.ads[i].id + '</h1>';
+                                    }
+                                } else {
+                                    html_code = '<h3 id="search_results" style="text-align:center">No Ad Found</h3>';
                                 }
-                                $('#div1').html(html_code);
+                                $('#filter-list').html(html_code);
+                                $('#pagination-block').hide();
+                                jQuery("html").animate({
+                                    scrollTop:jQuery("#filter-list").offset().top - 140
+                                });
                         },
                         error: function(e){
-                            alert('error');
+                            $('#filter-list').html('<h3 style="text-align:center">No Data Found</h3>');
                         }
                     })
                 })
             });
         }, 1000);
 
-   </script>
+</script>

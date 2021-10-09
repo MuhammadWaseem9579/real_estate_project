@@ -3,11 +3,11 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-10 col-md-offset-3">
-          <div class="card">
+          <div class="card-9">
             <div class="card-header bg-dark" style="color:White">
               <h2>Edit Profile<% resource_name.to_s.humanize %></h2>
             </div>
-            <div class="card-body">
+            <div class="card-body ">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
               <div class="field form-group">
@@ -22,7 +22,7 @@
               <%= f.label :profile_image %><br />
               <%= f.file_field :avatar, class: "form-control mb-2"%>
             </div>
-          <div class="row">
+          <div class="row mad">
              <div class="col">
                 <div class="field form-group">
                   <%= f.label :first_name %><br />
@@ -41,7 +41,7 @@
                   <%= f.label :email %><br />
                   <%= f.email_field :email,class: "form-control",placeholder:"Email", autofocus: true, autocomplete: "email" %>
                 </div>
-        <div class="row">
+        <div class="row mad">
           <div class="col">
             <div class="field form-group">
               <%= f.label :address %><br />
@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-         <div class="row">
+         <div class="row mad">
           <div class="col">
             <div class="field form-group">
               <%= f.label :phone_no %><br />
@@ -69,7 +69,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row mad">
           <div class="col">
             <div class="field form-group">
                   <%= f.label :cnic_image %><br />
@@ -80,7 +80,7 @@
             <div class="field form-group">
                     <% if resource.avatar1.attached? %>
                         <div class="field form-group">
-                            <image src="<%= (url_for(resource.avatar1.variant(resize: "410x200!"))) %>" class="cnic-image"></div>
+                            <image src="<%= (url_for(resource.avatar1)) %>" class="cnic-image"></div>
                     <% else %>
                         <p>No image found</p>
                     <% end %>
@@ -120,16 +120,6 @@
 
           </br>
 
-
-          <div class="card">
-            <div class="card-header">
-              <h4>Cancel my account</h4>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Unhappy?</h5>
-              <p class="card-text"><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: "btn btn-danger"%></p>
-            </div>
-          </div>
           </div>
       </div>
     </div>
@@ -137,3 +127,35 @@
 </br>
 <div>
 </div>
+<style>
+.cnic-image{
+  border-radius:13px;
+  width:100%;
+  heigt:180px;
+
+}
+@media(max-width: 768px){
+.cnic-image{
+  width:150px;
+
+}
+.card-9{
+  width:100%;
+}
+.mad{
+  width:110%;
+  display:inline;
+  float:left;
+
+}
+}
+/* @media(max-width: 600px){
+.cnic-image{
+  width:80px;
+  height:100px;
+
+}
+
+} */
+
+</style>

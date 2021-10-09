@@ -6,38 +6,36 @@
   	 		<div class="footer-col">
   	 			<h4>company</h4>
   	 			<ul>
-  	 				<li><a href="#">about us</a></li>
-  	 				<li><a href="#">our services</a></li>
-  	 				<li><a href="#">privacy policy</a></li>
-  	 				<li><a href="#">affiliate program</a></li>
+  	 				<li><a href="#">About us</a></li>
+  	 				<li><a href="#">Contact Us</a></li>
+  	 				<li><a href="#">Help and Support</a></li>
+  	 				<li><a href="#">Terms of Use</a></li>
   	 			</ul>
   	 		</div>
   	 		<div class="footer-col">
-  	 			<h4>get help</h4>
+  	 			<h4>Connect</h4>
   	 			<ul>
-  	 				<li><a href="#">FAQ</a></li>
-  	 				<li><a href="#">shipping</a></li>
-  	 				<li><a href="#">returns</a></li>
-  	 				<li><a href="#">order status</a></li>
-  	 				<li><a href="#">payment options</a></li>
+  	 				<li><a href="#"><%= link_to 'Home',root_path%></a></li>
+  	 				<li><a href="#"><%= link_to 'Houses', get_house_ads_path%></a></li>
+  	 				<li><a href="#"><%= link_to 'Houses For Rent', get_rent_ads_path%></a></li>
+  	 				<li><a href="#"><%= link_to 'Houses For Comercial', get_commercial_ads_path%></a></li>
   	 			</ul>
   	 		</div>
   	 		<div class="footer-col">
-  	 			<h4>online shop</h4>
+  	 			<h4>Head Office</h4>
   	 			<ul>
-  	 				<li><a href="#">watch</a></li>
-  	 				<li><a href="#">bag</a></li>
-  	 				<li><a href="#">shoes</a></li>
-  	 				<li><a href="#">dress</a></li>
+  	 				<li><p>Pearl One 44-C/2 Sadar Bazzar Lahore</p></li>
+  	 				<li><p>0800-RealState(63522)</p></li>
+  	 				<li><a href="#">Email Us</a></li>
   	 			</ul>
   	 		</div>
   	 		<div class="footer-col">
   	 			<h4>follow us</h4>
   	 			<div class="social-links">
-  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
-  	 				<a href="#"><i class="fab fa-twitter"></i></a>
-  	 				<a href="#"><i class="fab fa-instagram"></i></a>
-  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 				<a href="https://mbasic.facebook.com/?refsrc=deprecated&_rdr"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://twitter.com/?lang=en"><i class="fab fa-twitter"></i></a>
+  	 				<a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+  	 				<a href="https://www.linkedin.com/signup"><i class="fab fa-linkedin-in"></i></a>
   	 			</div>
   	 		</div>
   	 	</div>
@@ -51,8 +49,9 @@
 	font-family: 'Poppins', sans-serif;
 }
 #foot{
-  margin:0;
+  /* margin:0; */
 	padding:0;
+	margin-top: auto;
   box-sizing: border-box;
 }
 #conf{
@@ -95,6 +94,7 @@
 }
 .footer-col ul li:not(:last-child){
 	margin-bottom: 10px;
+	color: #bbbbbb;
 }
 .footer-col ul li a{
 	font-size: 16px;

@@ -1,7 +1,7 @@
 class AdsController < ApplicationController
 
   def index
-    @ads = current_user.ads
+    @ads = current_user.ads.where(deleted: false)
   end
 
   def new
@@ -21,11 +21,11 @@ class AdsController < ApplicationController
   end
 
   def edit
-    @ad = current_user.ads.find(params[:id])
+    @ad = current_user.ads.where(deleted: false).find(params[:id])
   end
 
   def update
-    @ad = current_user.ads.find(params[:id])
+    @ad = current_user.ads.where(deleted: false).find(params[:id])
     if @ad.update(permit_params)
       redirect_to ad_path(@ad)
     else
@@ -35,29 +35,41 @@ class AdsController < ApplicationController
   end
 
   def show
-    @ad = Ad.find(params[:id])
+    @ad = Ad.where(deleted: false).find(params[:id])
     @related_ads = Ad.where.not(id: @ad.id).where(purpose: @ad.purpose, property_type: @ad.property_type, city: @ad.city)
   end
 
   def destroy
+    redirect_to ads_path and return if current_user.ads.find(params[:id]).update(deleted: true)
+    flash[:danger] = "something went wrong"
+    render 'show'
   end
 
   def ads_filter
-    if params[:property_type].present? || params[:want_to].present?
-      if params[:property_type]
-        @ads = Ad.where(property_type: params[:property_type])
-      end
-      if params[:purpose]
-        @ads = @ads.where(purpose: params[:want_to])
-      end
-      render json: {success: true, message: "ye low", ads: @ads}
-    else
+    if params[:property_type].blank? && params[:city].blank? && params[:purpose].blank?
       render json: {success: false, message: "No Data Found"}
+    else
+      @ads = Ad.where(city: params[:city],deleted: false) if params[:city].present?
+      @ads = @ads.where(purpose: params[:purpose]) if params[:purpose].present?
+      @ads = @ads.where(property_type: params[:property_type]) if params[:property_type].present?
+      render json: {success: true, message: "Data Found", ads: @ads}
     end
+
+    # if params[:property_type].present? || params[:want_to].present?
+    #   if params[:property_type]
+    #     @ads = Ad.where(property_type: params[:property_type])
+    #   end
+    #   if params[:purpose]
+    #     @ads = @ads.where(purpose: params[:want_to])
+    #   end
+    #   render json: {success: true, message: "ye low", ads: @ads}
+    # else
+    #   render json: {success: false, message: "No Data Found"}
+    # end
   end
 
   private
     def permit_params
-      params.require(:ad).permit(:title,:area,:address,:property_type,:price,:city,:description,:phone_no,:pic1,:avatar,:pic2,:avatar1,:pic3,:pic4,:avatar2,:avatar3,:purpose,:electricity,:electricity_backup,:parking_space,:security_staff,:mosque,:bed,:bath,:community_gym,:nearby_hospital,:nearby_school)
+      params.require(:ad).permit(:title,:area,:address,:property_type,:price,:city,:description,:phone_no,:pic1,:avatar3,:pic2,:avatar4,:pic3,:pic4,:avatar5,:purpose,:electricity,:electricity_backup,:parking_space,:security_staff,:mosque,:bed,:bath,:community_gym,:nearby_hospital,:nearby_school)
     end
 end

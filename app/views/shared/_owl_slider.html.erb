@@ -1,137 +1,106 @@
-<head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-</head>
-<div class="body-4">
-<div class="container">
-<div class="slider owl-carousel">
-      <div class="card-2">
-        <div class="img-2">
-          <img src="profile-1.jpeg" alt="">
+<section id="tes">
+<h1 class="text-center text-capitalize pt-5">Testimonials</h1>
+<hr class="w-25 mx-auto pt-5">
+<div class="body3">
+    <div class="container" id ="testi">
+        <div class="wrapperss">
+            <div class="card-1">
+                <div class="card-thumbb">
+                    <%= image_tag("w.jpg",style: "width:100%; height:100%; border-radius:4px; object-fit: cover;")%>
+                    <span class="client-name">Author</span>
+                </div>
+                <div class="card-bodyy">
+
+                    <p class="review">Learning things is my passion and Im very passionate about being able to help the people in need; my IT degree will help me to do this.And this website helps lot of people."</p>
+                    <h2>Muhammad Waseem</h2>
+                    <h4>Follow us</h4>
+  	 			    <div class="social-links">
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div class="card-thumbb">
+                    <%= image_tag("p12.jpg",style: "width:100%; height:100%; border-radius:4px; object-fit: cover;")%>
+                    <span class="client-name">Developer</span>
+                </div>
+                <div class="card-bodyy">
+
+                    <p class="review">"Learning code is my obsession".In August 2016,I took the little I have saved and bought a computer,and installed ubuntu and start working on my passion and taught myself.</p>
+                    <h2>Muddasir Zafar</h2>
+                     <h4>Follow us</h4>
+  	 			    <div class="social-links">
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			    </div>
+                </div>
+            </div>
+            <div class="card-1">
+                <div class="card-thumbb">
+                    <%= image_tag("h.jpg",style: "width:100%; height:100%; border-radius:4px; object-fit: cover;")%>
+                    <span class="client-name">Designer</span>
+                </div>
+                <div class="card-bodyy">
+
+                    <p class="review">Many companies struggle to grab people's attention using their testimonial pages, but RealState does a great job of catching your eye as soon as you arrive on the page.</p>
+                    <h2>Muhammad Haris</h2>
+                    <h3>Follow us</h3>
+  	 			    <div class="social-links">
+  	 				<a href="#"><i class="fab fa-twitter"></i></a>
+  	 				<a href="#"><i class="fab fa-instagram"></i></a>
+  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 			    </div>
+                </div>
+            </div>
         </div>
-        <div class="content-2">
-          <div class="title-2">Briana Tozour</div>
-          <div class="sub-title">Graphic Designer</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
-          <div class="btn-2">
-            <button>Read more</button>
-          </div>
+        </br>
+        <div class="indicatorss">
+            <button class="activee"></button>
+            <button></button>
+            <button></button>
         </div>
-      </div>
-      <div class="card-2">
-        <div class="img-2">
-          <img src="profile-2.jpeg" alt="">
-        </div>
-        <div class="content-2">
-          <div class="title-2">Pricilla Preez</div>
-          <div class="sub-title">Web Developer</div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
-          <div class="btn-2">
-            <button>Read more</button>
-          </div>
-        </div>
-      </div>
-      <div class="card-2">
-        <div class="img-2">
-          <img src="profile-3.jpeg" alt="">
-        </div>
-        <div class="content-2">
-              <div class="title-2">Eliana Maia
-              </div>
-              <div class="sub-title">App Developer
-              </div>
-              <p class=para-2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
-              <div class="btn-2">
-                <button>Read more</button>
-              </div>
-        </div>
-      </div>
-      <div class="card-2">
-        <div class="img-2">
-          <img src="profile-3.jpeg" alt="">
-        </div>
-        <div class="content-2">
-              <div class="title-2">Muddasir
-              </div>
-              <div class="sub-title">App Developer
-              </div>
-              <p class=para-2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.</p>
-              <div class="btn-2">
-                <button>Read more</button>
-              </div>
-        </div>
-      </div>
-  </div>
-  </div>
+    </div>
 </div>
+</br>
+</br>
+</section>
 <style>
-.body-4{
-  display: grid;
-  height: 100%;
-  place-items: center;
-  text-align: center;
-  background: #f2f2f2;
+.social-links{
+    margin-top:20px;
+
 }
-.slider{
-  max-width: 1100px;
-  display: flex;
+.card-bodyy .social-links a{
+	display: inline-block;
+	height: 28px;
+	width: 28px;
+	background-color: black;
+	margin:0 5px 5px 0;
+	text-align: center;
+	line-height: 28px;
+	border-radius: 50%;
+	color: White;
+	transition: all 0.5s ease;
 }
-.slider .card-2{
-  flex: 1;
-  margin: 0 10px;
-  background: #fff;
-}
-.slider .card-2 .img-2{
-  height: 200px;
-  width: 100%;
-}
-.slider .card-2 .img-2 img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-.slider .card-2 .content-2{
-  padding: 10px 20px;
-}
-.card-2 .content-2 .title-2{
-  font-size: 25px;
-  font-weight: 600;
-}
-.card-2 .content-2 .sub-title{
-  font-size: 20px;
-  font-weight: 600;
-  color: #e74c3c;
-  line-height: 20px;
-}
-.card-2 .content-2 p{
-  text-align: justify;
-  margin: 10px 0;
-}
-.card-2 .content-2 .btn-2{
-  display: block;
-  text-align: left;
-  margin: 10px 0;
-}
-.card-2 .content-2 .btn-2 button{
-  background: #e74c3c;
-  color: #fff;
-  border: none;
-  outline: none;
-  font-size: 17px;
-  padding: 5px 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.card-2 .content-2 .btn-2 button:hover{
-  transform: scale(0.9);
+.card-bodyy .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
 }
 </style>
-    <script>
-      $(".slider").owlCarousel({
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 2000, //2000ms = 2s;
-        autoplayHoverPause: true,
-      });
-    </script>
+<script>
+const wrapperss = document.querySelector('.wrapperss');
+const indicatorss = [...document.querySelectorAll('.indicatorss button')];
+
+let currentTestimonial = 0; // Default 0
+
+indicatorss.forEach((item, i) => {
+    item.addEventListener('click', () => {
+        indicatorss[currentTestimonial].classList.remove('activee');
+        wrapperss.style.marginLeft = `-${100 * i}%`;
+        item.classList.add('activee');
+        currentTestimonial = i;
+    })
+})
+</script>

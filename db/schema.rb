@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_26_193429) do
+ActiveRecord::Schema.define(version: 2021_10_09_122347) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_09_26_193429) do
     t.string "address"
     t.string "property_type"
     t.float "area"
-    t.float "price"
+    t.integer "price"
     t.string "city"
     t.string "description"
     t.string "pic1"
@@ -60,6 +60,9 @@ ActiveRecord::Schema.define(version: 2021_09_26_193429) do
     t.boolean "nearby_school"
     t.boolean "nearby_hospital"
     t.boolean "security_staff"
+    t.boolean "featured_ad", default: false
+    t.string "state", default: "running"
+    t.boolean "deleted", default: false
   end
 
   create_table "favourite_ads", force: :cascade do |t|
