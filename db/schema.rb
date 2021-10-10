@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_09_122347) do
+ActiveRecord::Schema.define(version: 2021_10_09_190047) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_10_09_122347) do
     t.boolean "featured_ad", default: false
     t.string "state", default: "running"
     t.boolean "deleted", default: false
+    t.string "Land_Area"
   end
 
   create_table "favourite_ads", force: :cascade do |t|

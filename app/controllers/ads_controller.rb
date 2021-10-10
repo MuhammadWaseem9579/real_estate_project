@@ -70,6 +70,6 @@ class AdsController < ApplicationController
 
   private
     def permit_params
-      params.require(:ad).permit(:title,:area,:address,:property_type,:price,:city,:description,:phone_no,:pic1,:avatar3,:pic2,:avatar4,:pic3,:pic4,:avatar5,:purpose,:electricity,:electricity_backup,:parking_space,:security_staff,:mosque,:bed,:bath,:community_gym,:nearby_hospital,:nearby_school)
+      params.require(:ad).permit(:title,:area,:address,:property_type,:price,:city,:description,:phone_no,:pic1,:avatar3,:pic2,:avatar4,:pic3,:pic4,:avatar5,:purpose,:electricity,:electricity_backup,:parking_space,:security_staff,:mosque,:bed,:bath,:community_gym,:nearby_hospital,:nearby_school,:Land_Area)
     end
 end

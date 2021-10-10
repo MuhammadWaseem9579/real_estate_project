@@ -14,7 +14,7 @@
           <%# <img class="d-block w-100" src="" alt="First slide"> %>
         </div>
         <div class="carousel-item">
-          <%= image_tag("p5.jpg",height: '800', class: "d-block w-100")%>
+          <%= image_tag("m1.jpg",height: '800', class: "d-block w-100")%>
           <div class="carousel-caption d-none d-md-block">
                <h1 class="mb-3">Want To Buy</h1>
                <p>Select Houses According To Your Choice</p>
@@ -22,7 +22,7 @@
           <%# <img class="d-block w-100" src="..." alt="Second slide"> %>
         </div>
         <div class="carousel-item">
-          <%= image_tag("p1.jpg",height: '800', class: "d-block w-100")%>
+          <%= image_tag("m2.jpg",height: '800', class: "d-block w-100")%>
           <div class="carousel-caption d-none d-md-block">
                <h1 class="mb-3">Want To Sell</h1>
                <p>Select Houses According To Your Choice</p>
@@ -105,11 +105,26 @@
     </div>
 </div>
 </section>
+<section>
+    <%= render 'shared/my_slider', ads: @featured_ads , title: "Featured Ads" %>
+</section>
+<section>
+    <h1 class="text-center text-capitalize" style="margin-top: 150px;">Ads For You</h1>
+    <div class="borderr mb-5"></div>
+    <div id="filter-list"><%= render 'shared/ads_listing', obj:@ads , title: "Ads For You"%></div>
+    </br>
+    <div id="pagination-block">
+        <%= will_paginate @ads, class:"hello3" %>
+    <div>
+    <hr>
+
+</section>
+
 <section id="aboutt">
 <h1 class="text-center text-capitalize pt-5">about us</h1>
 <p class="text-center text-capitalize pt-3">We have the best projects in pakistan.
 </p>
-<hr class="w-25 mx-auto pt-5">
+<div class="borderr mb-5"></div>
 <div class="body1">
     <div class="container" id="con1">
         <div class="card">
@@ -143,20 +158,6 @@
         </div>
     </div>
 </div>
-</section>
-<section>
-    <h1 class="text-center text-capitalize mt-5">Ads For You</h1>
-    <hr class="w-25 mx-auto mt-5">
-    <div id="filter-list"><%= render 'shared/ads_listing', obj:@ads , title: "Ads For You"%></div>
-    </br>
-    <div id="pagination-block">
-        <%= will_paginate @ads, class:"hello3" %>
-    <div>
-    <hr>
-
-</section>
-<section>
-    <%= render 'shared/my_slider', ads: @featured_ads , title: "Featured Ads" %>
 </section>
 <section>
     <%= render 'shared/testi'%>

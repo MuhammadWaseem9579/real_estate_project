@@ -11,9 +11,5 @@ class AddColToAds < ActiveRecord::Migration[5.2]
     add_column :ads, :nearby_school, :boolean
     add_column :ads, :nearby_hospital, :boolean
     add_column :ads, :security_staff, :boolean
-
-
-
-
   end
 end

@@ -5,8 +5,9 @@
     <div class="row">
       <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
         <div class="sec-heading text-center">
-          <h6><%= title ? title : "Ads for you" %></h6>
-          <hr class="w-25 mx-auto pt-5">
+          <h6 style="margin-top: 100px;"><%= title ? title : "Ads for you" %></h6>
+          <p class="text-center text-capitalize pt-3" style="font-size:17px">Contact Us For Featuring Your Ads</p>
+          <div class="borderr mb-5"></div>
         </div>
       </div>
     </div>
@@ -21,10 +22,20 @@
                   <%= image_tag(ad.avatar3, class: "img-fluid move-animation", style: "width:100%; height:250px; border-radius-top:10px;")%>
                 </div>
                 <div class="info-area">
-                  <h4 style="margin-top:20px"><%= ad.title %></h4>
-                  <div class="ad-data">
-                    <span><%= ad.price %> Rs</span>
-                    <span>City : <%= ad.city%></span>
+                  <h4 style="margin-top:20px;"><%= ad.title %></h4>
+                  <div class="row mt-3">
+                      <div class="col-4">
+                        <i class="fas fa-home"style="font-size:30px; color:green;"></i>
+                        <p style="font-weight:bold;">1 Kanal</p>
+                      </div>
+                      <div class="col-4">
+                        <i class="fas fa-bed" style="font-size:30px; color:green;"></i>
+                        <p style="font-weight:bold;">5 beds</p>
+                      </div>
+                      <div class="col-4">
+                        <i class="fas fa-bath"style="font-size:30px; color:green;"></i>
+                        <p style="font-weight:bold;">3 bath</p>
+                      </div>
                   </div>
                   <%= link_to "Show" , ad_path(ad) %>
                 </div>

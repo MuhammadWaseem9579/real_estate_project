@@ -64,14 +64,28 @@
             <div class="row">
               <div class= "col">
                 <div class="field form-group">
-                    <%= f.label :area %>
-                    <%= f.number_field :area , class: "form-control" , autofocus: true, placeholder: "Enter Area in Square", required: true %>
+                    <%= f.label :Land_Area %>
+                    <%= f.text_field :Land_Area , class: "form-control" , autofocus: true, placeholder: "Enter Total Land Area", required: true %>
                 </div>
               </div>
               <div class= "col">
                 <div class="field form-group">
                     <%= f.label :city %>
                     <%= f.select(:city, options_for_select([['Lahore'], ['Karachi'], ['Islamabad'], ['Faislabad'], ['Multan'], ['Kashmir'], ['Other']]), {}, {class: "form-control mb-2"}) %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class= "col">
+                <div class="field form-group">
+                    <%= f.label :area %>
+                    <%= f.number_field :area , class: "form-control" , autofocus: true, placeholder: "Enter Area in Squares", required: true %>
+                </div>
+              </div>
+              <div class= "col">
+                <div class="field form-group">
+                    <%= f.label :mosque %>
+                    <%= f.select(:mosque, options_for_select([['Yes'], ['No']]), {}, {class: "form-control mb-2"}) %>
                 </div>
               </div>
             </div>
@@ -89,7 +103,50 @@
                     </div>
                 </div>
             </div>
-             <div class="field form-group">
+            <div class="row">
+                <div class= "col">
+                    <div class="field form-group">
+                        <%= f.label :bed %>
+                        <%= f.number_field :bed , class: "form-control" , autofocus: true, placeholder: "Enter Total Rooms ", required: true %>
+                    </div>
+                </div>
+                <div class= "col">
+                    <div class="field form-group">
+                    <%= f.label :bath %>
+                    <%= f.number_field :bath , class: "form-control" , autofocus: true, placeholder: "Enter Total Baths", required: true %>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class= "col">
+                <div class="field form-group">
+                    <%= f.label :nearby_school %>
+                    <%= f.select(:nearby_school, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
+                </div>
+              </div>
+              <div class= "col">
+                <div class="field form-group">
+                    <%= f.label :nearby_hospital %>
+                    <%= f.select(:nearby_hospital, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class= "col">
+                <div class="field form-group">
+                    <%= f.label :electricity %>
+                    <%= f.select(:electricity, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
+                </div>
+              </div>
+              <div class= "col">
+                <div class="field form-group">
+                    <%= f.label :security_staff %>
+                    <%= f.select(:security_staff, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
+                </div>
+              </div>
+            </div>
+
+            <div class="field form-group">
                 <%= f.label :description %>
                 <%= f.text_area :description , class: "form-control" , autofocus: true, placeholder: "Enter Details", required: true %>
             </div>
