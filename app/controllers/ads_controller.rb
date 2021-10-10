@@ -25,6 +25,7 @@ class AdsController < ApplicationController
   end
 
   def update
+    byebug
     @ad = current_user.ads.where(deleted: false).find(params[:id])
     if @ad.update(permit_params)
       redirect_to ad_path(@ad)
@@ -47,25 +48,12 @@ class AdsController < ApplicationController
 
   def ads_filter
     if params[:property_type].blank? && params[:city].blank? && params[:purpose].blank?
-      render json: {success: false, message: "No Data Found"}
+       nil
     else
       @ads = Ad.where(city: params[:city],deleted: false) if params[:city].present?
       @ads = @ads.where(purpose: params[:purpose]) if params[:purpose].present?
       @ads = @ads.where(property_type: params[:property_type]) if params[:property_type].present?
-      render json: {success: true, message: "Data Found", ads: @ads}
     end
-
-    # if params[:property_type].present? || params[:want_to].present?
-    #   if params[:property_type]
-    #     @ads = Ad.where(property_type: params[:property_type])
-    #   end
-    #   if params[:purpose]
-    #     @ads = @ads.where(purpose: params[:want_to])
-    #   end
-    #   render json: {success: true, message: "ye low", ads: @ads}
-    # else
-    #   render json: {success: false, message: "No Data Found"}
-    # end
   end
 
   private

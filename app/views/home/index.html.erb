@@ -68,41 +68,32 @@
 </style>
 <section>
 <div class="search-content"style="background-color: rgba(34, 34, 34, 0.85);padding: 15px; border-radius:10px;">
-    <div class="form-row ">
+    <div style= "display: none;">
+        <%= form_for :anything, url: "ads/ads_filter" do |form| %>
+            <%= form.text_field :city %>
+            <%= form.submit  %>
+        <% end  %>
+    </div>
+    <%= form_tag '/ads_filter', method: 'get' do |f| %>
+        <div class="form-row ">
         <div class="form-group col-lg-6">
             <label for="city">City</label>
-            <select class="form-control" id="select-city">
-                <option>Lahore</option>
-                <option>Karachi</option>
-                <option>Islamabad</option>
-                <option>Faislabad</option>
-                <option>Multan</option>
-                <option>Kashmir</option>
-                <option>Others</option>
-            </select>
+            <%= select_tag "city", options_for_select(["Lahore","Karachi","Islamabad","Faislabad","Multan","Kashmir","Others"], "Lahore"), class: "form-control" %>
         </div>
         <div class="form-group col-lg-6">
-            <label for="city">Property Type</label>
-                    <select class="form-control" id="select-property-type">
-                    <option>Plot</option>
-                    <option>House</option>
-                    <option>Commercial</option>
-                    <option>Others</option>
-                    </select>
+            <label for="property_type">Property Type</label>
+                <%= select_tag "property_type", options_for_select(["Plot","House","Commercial"], "Plot"), class: "form-control" %>
         </div>
     </div>
     <div class="form-row ">
         <div class="form-group col-lg-10">
-            <select class="form-control" id="select-purpose">
-                <option>Sale</option>
-                <option>Rent</option>
-            </select>
+            <%= select_tag "purpose", options_for_select(["Rent","Sale"], "Rent"), class: "form-control" %>
         </div>
         <div class="form-group col-md-2">
-
-            <button type="button" class="btn btn-success " id="select-search" >Search</button>
+            <%= submit_tag("Search", class: "btn btn-success")%>
         </div>
     </div>
+    <% end %>
 </div>
 </section>
 <section>

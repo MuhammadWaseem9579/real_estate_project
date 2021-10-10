@@ -29,7 +29,7 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-</div>
+<%# </div> %>
   <div class="container" id="tol">
     <div class="row justify-content-center ">
       <div class="col-md-10 col-md-offset-3">
@@ -39,139 +39,140 @@
           </div>
           <div class="card-body">
              <%= form_for @ad do |f| %>
-             <div class="field form-group">
-                <%= f.label :title %>
-                <%= f.text_field :title , class: "form-control" , autofocus: true, placeholder: "Enter Title", required: true %>
-            </div>
-             <div class="field form-group">
-                <%= f.label :address %>
-                <%= f.text_field :address , class: "form-control" , autofocus: true, placeholder: "Enter Address", required: true %>
-            </div>
-            <div class="row">
-              <div class= "col">
-                <div class="field form-group">
-                    <%= f.label :property_type %>
-                    <%= f.select(:property_type, options_for_select(['Plot', 'House', 'Commercial','Other']), {}, {class: "form-control mb-2"}) %>
+              <div class="field form-group">
+                  <%= f.label :title %>
+                  <%= f.text_field :title , class: "form-control" , autofocus: true, placeholder: "Enter Title", required: true %>
                 </div>
-              </div>
-              <div class= "col">
-                <div class="field form-group">
-                    <%= f.label :purpose %>
-                    <%= f.select(:purpose, options_for_select(['Sale', 'Rent']), {}, {class: "form-control mb-2"}) %>
+              <div class="field form-group">
+                  <%= f.label :address %>
+                  <%= f.text_field :address , class: "form-control" , autofocus: true, placeholder: "Enter Address", required: true %>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class= "col">
-                <div class="field form-group">
-                    <%= f.label :Land_Area %>
-                    <%= f.text_field :Land_Area , class: "form-control" , autofocus: true, placeholder: "Enter Total Land Area", required: true %>
-                </div>
-              </div>
-              <div class= "col">
-                <div class="field form-group">
-                    <%= f.label :city %>
-                    <%= f.select(:city, options_for_select([['Lahore'], ['Karachi'], ['Islamabad'], ['Faislabad'], ['Multan'], ['Kashmir'], ['Other']]), {}, {class: "form-control mb-2"}) %>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class= "col">
-                <div class="field form-group">
-                    <%= f.label :area %>
-                    <%= f.number_field :area , class: "form-control" , autofocus: true, placeholder: "Enter Area in Squares", required: true %>
-                </div>
-              </div>
-              <div class= "col">
-                <div class="field form-group">
-                    <%= f.label :mosque %>
-                    <%= f.select(:mosque, options_for_select([['Yes'], ['No']]), {}, {class: "form-control mb-2"}) %>
-                </div>
-              </div>
-            </div>
-            <div class="row">
+              <div class="row">
                 <div class= "col">
-                    <div class="field form-group">
-                        <%= f.label :price %>
-                        <%= f.number_field :price , class: "form-control" , autofocus: true, placeholder: "Enter Price ", required: true %>
-                    </div>
+                  <div class="field form-group">
+                      <%= f.label :property_type %>
+                      <%= f.select(:property_type, options_for_select(['Plot', 'House', 'Commercial','Other']), {}, {class: "form-control mb-2"}) %>
+                  </div>
                 </div>
                 <div class= "col">
-                    <div class="field form-group">
-                    <%= f.label :phone_no %>
-                    <%= f.number_field :phone_no , class: "form-control" , autofocus: true, placeholder: "Enter Phone No", required: true %>
-                    </div>
+                  <div class="field form-group">
+                      <%= f.label :purpose %>
+                      <%= f.select(:purpose, options_for_select(['Sale', 'Rent']), {}, {class: "form-control mb-2"}) %>
+                  </div>
                 </div>
-            </div>
-            <div class="row">
+              </div>
+                <div class="row">
                 <div class= "col">
-                    <div class="field form-group">
-                        <%= f.label :bed %>
-                        <%= f.number_field :bed , class: "form-control" , autofocus: true, placeholder: "Enter Total Rooms ", required: true %>
-                    </div>
+                  <div class="field form-group">
+                      <%= f.label :Land_Area %>
+                      <%= f.text_field :Land_Area , class: "form-control" , autofocus: true, placeholder: "Enter Total Land Area", required: true %>
+                  </div>
                 </div>
                 <div class= "col">
-                    <div class="field form-group">
-                    <%= f.label :bath %>
-                    <%= f.number_field :bath , class: "form-control" , autofocus: true, placeholder: "Enter Total Baths", required: true %>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-              <div class= "col">
-                <div class="field form-group">
-                    <%= f.label :nearby_school %>
-                    <%= f.select(:nearby_school, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
+                  <div class="field form-group">
+                      <%= f.label :city %>
+                      <%= f.select(:city, options_for_select([['Lahore'], ['Karachi'], ['Islamabad'], ['Faislabad'], ['Multan'], ['Kashmir'], ['Other']]), {}, {class: "form-control mb-2"}) %>
+                  </div>
                 </div>
               </div>
-              <div class= "col">
-                <div class="field form-group">
-                    <%= f.label :nearby_hospital %>
-                    <%= f.select(:nearby_hospital, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
+              <div class="row">
+                <div class= "col">
+                  <div class="field form-group">
+                      <%= f.label :area %>
+                      <%= f.number_field :area , class: "form-control" , autofocus: true, placeholder: "Enter Area in Squares", required: true %>
+                  </div>
+                </div>
+                <div class= "col">
+                  <div class="field form-group">
+                      <%= f.label :mosque %>
+                      <%= f.select(:mosque, options_for_select([['Yes'], ['No']]), {}, {class: "form-control mb-2"}) %>
+                  </div>
+                </div>
+                </div>
+              <div class="row">
+                  <div class= "col">
+                      <div class="field form-group">
+                          <%= f.label :price %>
+                          <%= f.number_field :price , class: "form-control" , autofocus: true, placeholder: "Enter Price ", required: true %>
+                      </div>
+                  </div>
+                  <div class= "col">
+                      <div class="field form-group">
+                      <%= f.label :phone_no %>
+                      <%= f.number_field :phone_no , class: "form-control" , autofocus: true, placeholder: "Enter Phone No", required: true %>
+                      </div>
+                  </div>
+                </div>
+              <div class="row">
+                  <div class= "col">
+                      <div class="field form-group">
+                          <%= f.label :bed %>
+                          <%= f.number_field :bed , class: "form-control" , autofocus: true, placeholder: "Enter Total Rooms ", required: true %>
+                      </div>
+                  </div>
+                  <div class= "col">
+                      <div class="field form-group">
+                      <%= f.label :bath %>
+                      <%= f.number_field :bath , class: "form-control" , autofocus: true, placeholder: "Enter Total Baths", required: true %>
+                      </div>
+                  </div>
+                </div>
+              <div class="row">
+                <div class= "col">
+                  <div class="field form-group">
+                      <%= f.label :nearby_school %>
+                      <%= f.select(:nearby_school, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
+                  </div>
+                </div>
+                <div class= "col">
+                  <div class="field form-group">
+                      <%= f.label :nearby_hospital %>
+                      <%= f.select(:nearby_hospital, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
+                  </div>
+                </div>
+                </div>
+              <div class="row">
+                <div class= "col">
+                  <div class="field form-group">
+                      <%= f.label :electricity %>
+                      <%= f.select(:electricity, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
+                  </div>
+                </div>
+                <div class= "col">
+                  <div class="field form-group">
+                      <%= f.label :security_staff %>
+                      <%= f.select(:security_staff, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
+                  </div>
+                </div>
+                </div>
+              <div class="field form-group">
+                  <%= f.label :description %>
+                  <%= f.text_area :description , class: "form-control" , autofocus: true, placeholder: "Enter Details", required: true %>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="field form-group">
+                    <%= f.label :pic1%><br />
+                    <%= f.file_field :avatar3, class: "form-control mb-2"%>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="field form-group">
+                    <%= f.label :pic2%><br />
+                    <%= f.file_field :avatar4, class: "form-control mb-2"%>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="field form-group">
+                    <%= f.label :pic3%><br />
+                    <%= f.file_field :avatar5, class: "form-control mb-2"%>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class= "col">
-                <div class="field form-group">
-                    <%= f.label :electricity %>
-                    <%= f.select(:electricity, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
-                </div>
+              <div class="action-field">
+                <%= f.submit "Update" , class:"my-1 btn btn-primary col-12"%>
               </div>
-              <div class= "col">
-                <div class="field form-group">
-                    <%= f.label :security_staff %>
-                    <%= f.select(:security_staff, options_for_select(['Yes', 'No']), {}, {class: "form-control mb-2"}) %>
-                </div>
-              </div>
-            </div>
-             <div class="field form-group">
-                <%= f.label :description %>
-                <%= f.text_area :description , class: "form-control" , autofocus: true, placeholder: "Enter Details", required: true %>
-            </div>
-            <div class="row">
-              <div class="col">
-                <div class="field form-group">
-                  <%= f.label :pic1%><br />
-                  <%= f.file_field :avatar3, class: "form-control mb-2"%>
-                </div>
-              </div>
-              <div class="col">
-                <div class="field form-group">
-                  <%= f.label :pic2%><br />
-                  <%= f.file_field :avatar4, class: "form-control mb-2"%>
-                </div>
-              </div>
-              <div class="col">
-                <div class="field form-group">
-                  <%= f.label :pic3%><br />
-                  <%= f.file_field :avatar5, class: "form-control mb-2"%>
-                </div>
-              </div>
-            </div>
-            <div class="action-field">
-              <% end %>
-
+            <% end %>
           </div>
         </div>
       </div>

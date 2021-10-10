@@ -1,0 +1,8 @@
+<h1 class="text-center text-capitalize" style="margin-top: 150px;"><%= @ads.count %> <%= "results".pluralize %> found</h1>
+    <div class="borderr mb-5"></div>
+    <div id="filter-list"><%= render 'shared/ads_listing', obj:@ads , title: "Results"%></div>
+    </br>
+    <div id="pagination-block">
+        <%# <%= will_paginate @ads, class:"hello3" %> %>
+    <div>
+    <hr>

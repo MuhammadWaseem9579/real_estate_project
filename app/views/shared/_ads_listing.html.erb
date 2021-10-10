@@ -3,11 +3,9 @@
     <div class="container" id ="ttest">
     <% obj.each do |ad| %>
         <div class="wwrapper mt-2">
-
-
             <div class="card-2">
                 <div class="card-thumb-2">
-                    <%= image_tag(url_for(ad.avatar3),style: "width:100%; height:350px; border-radius:10px; object-fit: cover; background-size: cover;")%>
+                    <%= image_tag(url_for(ad.avatar3),style: "width:100%; height:380px; border-radius:10px; object-fit: cover; background-size: cover;")%>
                 </div>
                 <div class="card-body-2">
                    <h3 class="card-title mt-5"style="font-weight:bolder"><%=ad.title%></h3>
