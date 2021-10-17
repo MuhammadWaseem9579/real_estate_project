@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
-  resources :ads
 
+  resources :ads
   get '/ads_filter', to: "ads#ads_filter"
   get '/get_house_ads', to: "home#get_house_property_ads"
   get '/get_commercial_ads', to: "home#get_commercial_property_ads"

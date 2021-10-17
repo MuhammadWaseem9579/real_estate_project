@@ -25,7 +25,6 @@ class AdsController < ApplicationController
   end
 
   def update
-    byebug
     @ad = current_user.ads.where(deleted: false).find(params[:id])
     if @ad.update(permit_params)
       redirect_to ad_path(@ad)

@@ -38,7 +38,7 @@
               <h2 class="text-center text-capitalize pt-1">Add Property Details</h2>
           </div>
           <div class="card-body">
-             <%= form_for @ad do |f| %>
+             <%= form_for @ad method:'post' do |f| %>
               <div class="field form-group">
                   <%= f.label :title %>
                   <%= f.text_field :title , class: "form-control" , autofocus: true, placeholder: "Enter Title", required: true %>
