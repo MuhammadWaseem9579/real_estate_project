@@ -1,5 +1,7 @@
 class AdsController < ApplicationController
 
+  skip_before_action :verify_authenticity_token, :only => [:feature_ad]
+
   def index
     @ads = current_user.ads.where(deleted: false)
   end
@@ -52,6 +54,16 @@ class AdsController < ApplicationController
       @ads = Ad.where(city: params[:city],deleted: false) if params[:city].present?
       @ads = @ads.where(purpose: params[:purpose]) if params[:purpose].present?
       @ads = @ads.where(property_type: params[:property_type]) if params[:property_type].present?
+    end
+  end
+
+  def feature_ad
+    render json: {success: false, message: "Access Denied"} and return unless user_signed_in? || current_user.admin
+    @ad = Ad.find(params[:id])
+    if @ad.update(featured_ad: params[:feature_ad])
+      render json: {success: true, message: "Ad Featured successfully"}
+    else
+      render json: {success: false, message: "Something went wrong. Try again later"}
     end
   end
 

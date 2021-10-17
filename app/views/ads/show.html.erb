@@ -37,8 +37,7 @@
     </div>
   </div>
   <div class="col-lg-6 mt-3 enqiry">
-    <% if @ad.user == current_user %>
-        <form>
+    <% if @ad.user == current_user || current_user.admin %>
             <div class="form-group">
               <div class="row icons">
                 <div class="col-4">
@@ -69,10 +68,18 @@
               <p style=" font-size:18px; margin-left:35px;"><%= @ad.description.truncate(200)%></p>
             </div>
             <%= link_to "Edit Ad", edit_ad_path(@ad), class: "btn btn-success pl-4 pr-4 custom-btn" %>
+            <% if current_user.admin %>
+              <% if @ad.featured_ad %>
+                <%# unfeatured %>
+                 <button class="btn btn-success" id="featuring_ad_btn">UnFeatured_Ad</button>
+              <% else %>
+                <%# featured %>
+                 <a class="btn btn-success" id="featuring_ad_btn">Featured_Ad</a>
+              <% end %>
+            <% end %>
             <%= link_to "Delete Ad" , ad_path(@ad), method: :delete , data: {confirm: "Are you sure?"}, class: "btn btn-danger pl-3 pr-3 custom-btn" %>
-          </form>
+
       <% else  %>
-        <form>
           <div class="form-group">
               <div class="row icons">
                 <div class="col-4">
@@ -110,7 +117,6 @@
           </div>
             <button type="button" class="btn btn-success pl-4 pr-4" style="border: 2px solid #555;">Call</button>
             <button type="button" class="btn btn-light pl-3 pr-3" style="border: 2px solid #555;">E-mail</button>
-        </form>
       <% end %>
   </div>
 </div>
@@ -219,3 +225,27 @@
 }
 
 </style>
+
+<script>
+  setTimeout(() => {
+    $(document).ready(function() {
+      $(document).on('click', '#featuring_ad_btn', function() {
+        $.ajax({
+          type: "POST",
+          url: "/ads/"+ <%= @ad.id %> +"/feature_ad",
+          dataType: 'json',
+          data: {
+            "feature_ad" : <%= !@ad.featured_ad %>
+          },
+          success: function(data) {
+            var text = (<%= @ad.featured_ad %> ? 'Featured Ad' : 'Unfeature Ad');
+            $('#featuring_ad_btn').text(text)
+          },
+          error: function(e){
+            alert("failed");
+          }
+        })
+      });
+    });
+  }, 1000);
+</script>
